@@ -1,0 +1,13 @@
+name: Dynamic Message
+
+on: push
+
+jobs:
+  ankit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Hello ${{ github.actor }}"
+      - run: echo "You pushed to ${{ github.ref_name }}"
+      - run: echo "from repository ${{ github.event.repository.name }}"
+      - run: echo "at $(TZ='Asia/Kolkata' date '+%Y-%m-%d %H:%M IST')"
